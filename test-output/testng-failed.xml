@@ -5,7 +5,7 @@
     <classes>
       <class name="Foursidesplay.TestCase">
         <methods>
-          <include name="updateProfileTest"/>
+          <include name="viewAllTest"/>
           <include name="teardown"/>
           <include name="setup"/>
         </methods>

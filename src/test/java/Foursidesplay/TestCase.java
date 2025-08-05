@@ -70,31 +70,40 @@ public class TestCase {
 	}
 
 	// Test Case 3: Profile update
+	
 	@Test
 	public void updateProfileTest() throws InterruptedException {
-		driver.findElement(By.xpath("//a[@href=\"/login\"]")).click();
-		Thread.sleep(2000);
+	    driver.findElement(By.xpath("//a[@href='/login']")).click();
+	    Thread.sleep(2000);
 
-		WebElement enterphoneNumber = driver.findElement(By.xpath("//input[@placeholder=\"Mobile Number\"]"));
-		enterphoneNumber.sendKeys("8920689888");
+	    WebElement enterphoneNumber = driver.findElement(By.xpath("//input[@placeholder='Mobile Number']"));
+	    enterphoneNumber.sendKeys("8920689888");
 
-		driver.findElement(By.xpath("//button[normalize-space(.)='Send OTP']")).click();
+	    driver.findElement(By.xpath("//button[normalize-space(.)='Send OTP']")).click();
 
-		driver.findElement(By.xpath("//input[@name=\"otp\"]")).sendKeys("1234");
-		Thread.sleep(4000);
-		WebElement clickOnSendOtp = driver.findElement(By.xpath("//button[normalize-space(.)='Verify OTP']"));
-		Thread.sleep(2000);
-		clickOnSendOtp.click();
-		Thread.sleep(4000);
+	    driver.findElement(By.xpath("//input[@name='otp']")).sendKeys("1234");
+	    Thread.sleep(4000);
 
-		driver.findElement(By.xpath("//a[@href='/Profile']")).click();
+	    WebElement clickOnSendOtp = driver.findElement(By.xpath("//button[normalize-space(.)='Verify OTP']"));
+	    Thread.sleep(2000);
+	    clickOnSendOtp.click();
+	    Thread.sleep(4000);
 
-		WebElement editBtn = driver.findElement(By.xpath("//button[@class=\"edit-button-yellow\"]"));
-		editBtn.click();
-		WebElement input = driver.findElement(By.xpath("//input[@class='input-name']"));
-		input.clear();
-		input.sendKeys("Hey this update message");
-		driver.findElement(By.xpath("//button[@class='edit-button']")).click();
+	    // Navigate to profile
+	    driver.findElement(By.xpath("//a[@href='/Profile']")).click();
+
+	    // Click on edit button
+	    WebElement editBtn = wait.until(ExpectedConditions.elementToBeClickable(
+	        By.xpath("//button[@class='edit-button-yellow']")));
+	    editBtn.click();
+
+	    // Edit name input
+	    WebElement input = driver.findElement(By.xpath("//input[@class='input-name']"));
+	    input.clear();
+	    input.sendKeys("Hey this update message");
+
+	    // Click save/update
+	    wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@class='edit-button-yellow']"))).click();
 	}
 
 	// Test Case 4: Verify current URL
@@ -436,9 +445,10 @@ public class TestCase {
 	}
 
 	// Test Case 14: View all button
+	
 	@Test
 	public void viewAllTest() throws InterruptedException {
-		driver.get("https://chull.tv/"); // Always good to ensure you’re on the right page
+		driver.get("https://4sidesplay.com/"); // Always good to ensure you’re on the right page
 
 		// Click login
 		driver.findElement(By.xpath("//a[@href='/login']")).click();
@@ -459,14 +469,16 @@ public class TestCase {
 		WebElement clickOnSendOtp = driver.findElement(By.xpath("//button[normalize-space()='Verify OTP']"));
 		Thread.sleep(2000);
 		clickOnSendOtp.click();
+		
+		JavascriptExecutor jd=(JavascriptExecutor)driver;
+		jd.executeScript("window.scrollBy(0,400)");
 
-		// Wait for navigation or home screen to load fully
-		Thread.sleep(3000); // Adjust depending on speed or replace with proper wait
+		
 
 		// Wait until the "Top 10 in India" link is present and clickable
 		try {
 			WebElement top10Link = wait
-					.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(@href,'free-episode')]")));
+					.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[contains(@href,'View/home')])[1]")));
 			top10Link.click();
 		} catch (TimeoutException e) {
 			System.out.println("Top 10 link not clickable: " + e.getMessage());

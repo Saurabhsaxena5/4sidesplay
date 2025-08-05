@@ -2,20 +2,20 @@
 <testng-results ignored="26" total="27" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-17T15:19:31 IST" name="Default suite" finished-at="2025-07-17T15:20:19 IST" duration-ms="48176">
+  <suite started-at="2025-08-05T13:15:52 IST" name="Default suite" finished-at="2025-08-05T13:16:13 IST" duration-ms="20965">
     <groups>
     </groups>
-    <test started-at="2025-07-17T15:19:31 IST" name="Default test" finished-at="2025-07-17T15:20:19 IST" duration-ms="48176">
+    <test started-at="2025-08-05T13:15:52 IST" name="Default test" finished-at="2025-08-05T13:16:13 IST" duration-ms="20965">
       <class name="Foursidesplay.TestCase">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Foursidesplay.TestCase@41a0aa7d]" started-at="2025-07-17T15:19:31 IST" name="setup" finished-at="2025-07-17T15:19:35 IST" duration-ms="3770" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:Foursidesplay.TestCase@41a0aa7d]" started-at="2025-08-05T13:15:52 IST" name="setup" finished-at="2025-08-05T13:15:56 IST" duration-ms="4673" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="checkRelatedvideo()[pri:0, instance:Foursidesplay.TestCase@41a0aa7d]" started-at="2025-07-17T15:19:35 IST" name="checkRelatedvideo" finished-at="2025-07-17T15:20:19 IST" duration-ms="43781" status="PASS">
+        <test-method signature="viewAllTest()[pri:0, instance:Foursidesplay.TestCase@41a0aa7d]" started-at="2025-08-05T13:15:56 IST" name="viewAllTest" finished-at="2025-08-05T13:16:12 IST" duration-ms="15332" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkRelatedvideo -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:Foursidesplay.TestCase@41a0aa7d]" started-at="2025-07-17T15:20:19 IST" name="teardown" finished-at="2025-07-17T15:20:19 IST" duration-ms="561" status="PASS">
+        </test-method> <!-- viewAllTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:Foursidesplay.TestCase@41a0aa7d]" started-at="2025-08-05T13:16:12 IST" name="teardown" finished-at="2025-08-05T13:16:13 IST" duration-ms="909" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
